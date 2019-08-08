@@ -28,6 +28,9 @@
 .idea/**/dictionaries
 .idea/**/shelf
 
+#packagelock
+package-lock.json
+
 # Generated files
 .idea/**/contentModel.xml
 
