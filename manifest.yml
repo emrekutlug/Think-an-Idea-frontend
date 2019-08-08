@@ -2,3 +2,5 @@ applications:
   - name: ThinkAnIdeaClient
     random-route: true
     memory: 128M
+    env:
+    - VUE_APP_ENVIRONMENT: production
