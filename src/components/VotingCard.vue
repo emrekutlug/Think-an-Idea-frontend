@@ -18,12 +18,16 @@
             <br>
             <h5 class="card-title">Current Votes: {{details.votes}}</h5>
             <button class="btn btn-dark" type="button" style="font-size: 20px" @click="toggleDetail()">Details</button>
-            <button class="btn btn-dark" type="button" style="font-size: 20px" v-if="checkIfLeader()">Edit</button>
+            <button class="btn btn-dark" type="button" style="font-size: 20px" @click="editFields" v-if="checkIfLeader()">Edit</button>
             <br>
             <br>
             <br>
             <div :id="cardID" v-if="showDetail">
-                <li class="list-group-item"><p class="card-text"><b>Justification:</b> {{details.justification}}</p>
+
+                <li v-if= "editDetails" class="list-group-item"><p class="card-text"><b>Justification: </b>  </p>
+                    <textarea style="resize: both; width:100%; height:100%" v-model = "editedJustification" v-on:change="editJustificationFunc"></textarea>
+                </li>
+                <li v-else class="list-group-item"><p class="card-text"><b>Justification:</b> {{editedJustification}}</p>
                 </li>
                 <li class="list-group-item"><p class="card-text"><b>Influence Area: </b>{{details.influenceArea}}</p>
                 </li>
@@ -93,6 +97,8 @@
                 userName: null,
                 isAdmin: null,
                 showDetail: false,
+                editDetails: false,
+                editedJustification:this.details.justification
             }
         },
         mounted() {
@@ -169,6 +175,16 @@
                     }
                     return sum;
                 },
+                editFields(){
+                    console.log("Edit Fields Button pressed");
+                    //e.preventDefault();
+                    this.editDetails = !this.editDetails;
+                },
+                editJustificationFunc(e){
+                    console.log("editJustificationFunc called");
+                    this.editedJustification = e.target.value;
+                    console.log("editedJustification is: ", this.editedJustification);
+                }
             },
 
         created() {
