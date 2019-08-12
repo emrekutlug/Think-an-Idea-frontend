@@ -1,4 +1,5 @@
 applications:
   - name: ThinkAnIdeaClient
+    path: dist
     random-route: true
     memory: 128M
