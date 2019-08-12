@@ -1,7 +1,7 @@
 applications:
   - name: ThinkAnIdeaClient
     path: ./dist
-    buildpack: https://github.com/cloudfoundry-community/nginx-buildpack.git
+    buildpack: https://github.com/cloudfoundry/staticfile-buildpack.git
     random-route: true
     memory: 128M
 
