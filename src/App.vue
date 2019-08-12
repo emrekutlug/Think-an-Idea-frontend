@@ -27,7 +27,7 @@
     beforeMount() {
       console.log("Environment", process.env.VUE_APP_ENVIRONMENT);
       console.log("getEndpointURL", getEndpointURL());
-      
+
       axios({
         method: 'get',
         url: `${getEndpointURL()}/auth/logged`,
