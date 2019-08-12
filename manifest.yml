@@ -2,6 +2,6 @@ applications:
   - name: ThinkAnIdeaClient
     path: ./dist
     buildpack: https://github.com/cloudfoundry/staticfile-buildpack.git
-    random-route: true
+    random-route: false
     memory: 128M
 
