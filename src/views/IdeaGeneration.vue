@@ -146,7 +146,7 @@
             isAdmin: async function(userID){
                 let result = await axios({
                     method: 'GET',
-                    url: 'http://localhost:1234/users/getUser',
+                    url: `${process.env.VUE_APP_BACKENDURL}/users/getUser`,
                     params: {uid: userID}
                 });
                 return result.data
