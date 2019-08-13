@@ -136,7 +136,7 @@
             getAllAttributes: async function(){
                 let result = await axios({
                     method: 'GET',
-                    url: 'http://localhost:1234/getAllAttributes',
+                    url: `${process.env.VUE_APP_BACKENDURL}/getAllAttributes`,
                     headers: {'Access-Control-Allow-Origin': '*'},
                     withCredentials : true
                 });

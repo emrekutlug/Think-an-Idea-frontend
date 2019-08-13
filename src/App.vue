@@ -31,22 +31,18 @@
 
       axios({
         method: 'get',
-        url: `${getEndpointURL()}/auth/logged`,
+        url: `${process.env.VUE_APP_BACKENDURL}/auth/logged`,
         withCredentials : true
       }).then(r => {
         console.log(r.data);
         if(!r.data.logged) {
-          window.location.href=`${getEndpointURL()}/auth/login`
+          window.location.href=`${process.env.VUE_APP_BACKENDURL}/auth/login`
         }
       })
       .catch(e => {
         console.log(e);
       });
-    },
-    mounted() {
-      console.log('mounted');
     }
-    
   }
 
 </script>
