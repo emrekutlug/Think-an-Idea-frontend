@@ -18,8 +18,7 @@
 <script>
   import navbar from "./components/NavBar.vue"
   import axios from 'axios';
-  import {getEndpointURL} from "./util/api";
-  //axios.defaults.withCredentials = true; 
+  //axios.defaults.withCredentials = true;
   export default {
     components: {
       navbar
@@ -27,7 +26,6 @@
     beforeMount() {
       console.log("process.env", process.env);
       console.log("Environment", process.env.VUE_APP_BACKENDURL);
-      console.log("getEndpointURL", getEndpointURL());
 
       axios({
         method: 'get',

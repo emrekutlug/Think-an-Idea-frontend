@@ -61,7 +61,7 @@
                 let dateFormated = dateFormat(now, "mmmm dS, yyyy, h:MM:ss TT");
                 axios({
                     method: 'POST',
-                    url: 'http://localhost:1234/idea/ideas',
+                    url: `${process.env.VUE_APP_BACKENDURL}/idea/ideas`,
                     //data: {title: {title: this.title, edit:false}, body: this.body, creator: {creatorID: this.creator.uid, creatorName: this.creator.cn }, leader: null, members: [], isActive: true, time: this.time},
                     data: {title: this.title, body: this.body, creator: {creatorID: this.creator.uid, creatorName: this.creator.cn }, leader: null, members: [], isActive: true, date: dateFormated, details: {justification: null, costs: [], influenceArea: null, timeline:[], boxlink: null, status: null, votes: null } },
                 })
@@ -79,7 +79,7 @@
             async getCreatorID(){
                 let result = await axios({
                     method: 'GET',
-                    url: 'http://localhost:1234/getAllAttributes',
+                    url: `${process.env.VUE_APP_BACKENDURL}/getAllAttributes`,
                     headers: {'Access-Control-Allow-Origin': '*'},
                     withCredentials : true
                 });

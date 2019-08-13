@@ -59,20 +59,6 @@
         created(){
             this.timer = setInterval(this.getFunction, 3000);
         },
-        /*
-        methods: {
-            getRealCards: function(){
-                this.cards.filter(function(card){
-                    if(card.isActive === false && card.creator.creatorID === this.userDetails.userID){
-                        this.realCards.push(card) ;
-                    }else{
-                        this.realCards.push(card) ;
-                    }
-                })
-            }
-        },
-
-         */
         beforeDestroy() {
             clearInterval(this.timer)
         },

@@ -41,12 +41,12 @@
         },
         methods: {
             logout() {
-                window.location.href = "http://localhost:1234/auth/logout";
+                window.location.href = `${process.env.VUE_APP_BACKENDURL}/auth/logout`;
             },
             async getAllAttributes(){
                 let result = await axios({
                     method: 'GET',
-                    url: 'http://localhost:1234/getAllAttributes',
+                    url:  `${process.env.VUE_APP_BACKENDURL}/getAllAttributes`,
                     headers: {'Access-Control-Allow-Origin': '*'},
                     withCredentials : true
                 });

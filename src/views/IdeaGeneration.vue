@@ -78,7 +78,7 @@
         methods: {
             getAll: function() {
                 axios
-                .get('http://localhost:1234/idea/allIdeas')
+                .get(`${process.env.VUE_APP_BACKENDURL}/idea/allIdeas`)
                 .then(response => {
                     this.allCards = response.data;
                     console.log(response.data);
@@ -88,7 +88,7 @@
             },
             getCreatorIdeas: function() {
                 axios
-                .get('http://localhost:1234/idea/myIdeas',
+                .get(`${process.env.VUE_APP_BACKENDURL}/idea/myIdeas`,
                 {params: {id: this.userDetails.userID}})
                 .then(response => {
                     this.myIdeasCards = response.data
@@ -98,7 +98,7 @@
             },
             getParticipatingIdeas: function() {
                 axios
-                .get('http://localhost:1234/idea/iMember',
+                .get(`${process.env.VUE_APP_BACKENDURL}/idea/iMember`,
                 {params: {id: this.userDetails.userID}})
                 .then(response => {
                     this.iMemberCards = response.data
@@ -108,7 +108,7 @@
             },
             getLeadingIdeas: function() {
                 axios
-                .get('http://localhost:1234/idea/iLead',
+                .get(`${process.env.VUE_APP_BACKENDURL}/idea/iLead`,
                 {params: {id: this.userDetails.userID}})
                 .then(response => {
                     this.iLeadCards = response.data
