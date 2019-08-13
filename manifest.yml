@@ -4,6 +4,4 @@ applications:
     buildpack: https://github.com/cloudfoundry/staticfile-buildpack.git
     random-route: false
     memory: 512M
-    env:
-      VUE_APP_ENVIRONMENT: production
 

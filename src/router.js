@@ -12,13 +12,11 @@ export default new Router({
     {
       path: '/',
       name: 'ideageneration',
-      component: IdeaGeneration,
-      props: { user: '123456'}
+      component: IdeaGeneration
     },
     {
       path: '/voting',
       name: 'voting',
-      props: { user: '123456'},
       component: Voting
     },
     {

@@ -26,7 +26,7 @@
     },
     beforeMount() {
       console.log("process.env", process.env);
-      console.log("Environment", process.env.VUE_APP_ENVIRONMENT);
+      console.log("Environment", process.env.VUE_APP_BACKENDURL);
       console.log("getEndpointURL", getEndpointURL());
 
       axios({
