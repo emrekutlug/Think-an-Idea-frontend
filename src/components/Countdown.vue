@@ -23,16 +23,14 @@
         beforeCreate: async function() {
             let result = await axios({
                 method: 'GET',
-                url: 'http://localhost:1234/countdown/deadline'
-            })
-            this.time = result.data.deadline
-            console.log("Time is: " + this.time)
+                url:  `${process.env.VUE_APP_BACKENDURL}/countdown/deadline`,
+            });
+            this.time = result.data.deadline;
         },
 
         methods: {
             goVoting: function () {
                 if(this.time != null) {
-                    //console.log("goVoting Pressed")
                     this.$router.push({ path: '/voting' })
                 }
 

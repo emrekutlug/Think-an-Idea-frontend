@@ -24,9 +24,6 @@
       navbar
     },
     beforeMount() {
-      console.log("process.env", process.env);
-      console.log("Environment", process.env.VUE_APP_BACKENDURL);
-
       axios({
         method: 'get',
         url: `${process.env.VUE_APP_BACKENDURL}/auth/logged`,

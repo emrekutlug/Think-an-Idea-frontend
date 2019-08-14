@@ -85,7 +85,7 @@
         methods: {
             getAll: function() {
                 axios
-                    .get('http://localhost:1234/voting/allIdeas')
+                    .get(`${process.env.VUE_APP_BACKENDURL}/voting/allIdeas`)
                     .then(response => {
                         this.allCards = response.data
                     }).catch(error =>{
@@ -94,7 +94,7 @@
             },
             getCreatorIdeas: function() {
                 axios
-                    .get('http://localhost:1234/voting/myIdeas',
+                    .get(`${process.env.VUE_APP_BACKENDURL}/voting/myIdeas`,
                     {params: {id: this.userDetails.userID}})
                     .then(response => {
                         this.myIdeasCards = response.data
@@ -104,7 +104,7 @@
             },
             getParticipatingIdeas: function() {
                 axios
-                    .get('http://localhost:1234/voting/iMember',
+                    .get(`${process.env.VUE_APP_BACKENDURL}/voting/iMember`,
                     {params: {id: this.userDetails.userID}})
                     .then(response => {
                         this.iMemberCards = response.data
@@ -114,7 +114,7 @@
             },
             getLeadingIdeas: function() {
                 axios
-                    .get('http://localhost:1234/voting/iLead',
+                    .get(`${process.env.VUE_APP_BACKENDURL}/voting/iLead`,
                     {params: {id: this.userDetails.userID}})
                     .then(response => {
                         this.iLeadCards = response.data
@@ -157,7 +157,7 @@
             getAllAttributes: async function(){
                 let result = await axios({
                     method: 'GET',
-                    url: 'http://localhost:1234/getAllAttributes',
+                    url: `${process.env.VUE_APP_BACKENDURL}/getAllAttributes`,
                     headers: {'Access-Control-Allow-Origin': '*'},
                     withCredentials : true
                 });
@@ -167,7 +167,7 @@
             isAdmin: async function(userID){
                 let result = await axios({
                     method: 'GET',
-                    url: 'http://localhost:1234/users/getUser',
+                    url: `${process.env.VUE_APP_BACKENDURL}/users/getUser`,
                     params: {uid: userID}
                 });
                 return result.data

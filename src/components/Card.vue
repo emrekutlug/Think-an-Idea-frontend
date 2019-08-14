@@ -87,7 +87,7 @@
                 this.vueBody = this.editedBody;
 
                 axios
-                    .put('http://localhost:1234/idea/updateIdea',
+                    .put(`${process.env.VUE_APP_BACKENDURL}/idea/updateIdea`,
                         {id: this.cardID,title: this.editedTitle,body: this.editedBody, isActive: true})
                     .then(response => {
                         console.log("Response from editAll updateEdit: ",response);
@@ -152,7 +152,7 @@
             deleteIdea(){
                 event.preventDefault();
                 axios
-                .delete('http://localhost:1234/idea/ideas',
+                .delete(`${process.env.VUE_APP_BACKENDURL}/idea/ideas`,
                 {params: {id: this.cardID}})
                 .then(response => {
                     this.$parent.getFunction()
@@ -163,7 +163,7 @@
             becomeProjectMember(){
                 event.preventDefault();
                 axios
-                .put('http://localhost:1234/idea/becomeProjectMember',
+                .put(`${process.env.VUE_APP_BACKENDURL}/idea/becomeProjectMember`,
                 {id: this.cardID, member: {memberID: this.userID, memberName: this.userName}})
                 .then(response => {
                     this.$parent.getFunction()
@@ -174,7 +174,7 @@
             leaveProjectMembership(){
                 event.preventDefault();
                 axios
-                .put('http://localhost:1234/idea/leaveProjectMembership',
+                .put(`${process.env.VUE_APP_BACKENDURL}/idea/leaveProjectMembership`,
                 {id: this.cardID, member: {memberID: this.userID, memberName: this.userName}})
                 .then(response => {
                     this.$parent.getFunction()
@@ -185,7 +185,7 @@
             becomeProjectLeader(){
                 event.preventDefault();
                 axios
-                .put('http://localhost:1234/idea/becomeProjectLeader',
+                .put(`${process.env.VUE_APP_BACKENDURL}/idea/becomeProjectLeader`,
                 {id: this.cardID, leader: {leaderID: this.userID, leaderName: this.userName}})
                 .then(response => {
                     this.$parent.getFunction()
@@ -196,7 +196,7 @@
             leaveProjectLeadership(){
                 event.preventDefault();
                 axios
-                .put('http://localhost:1234/idea/leaveProjectLeadership',
+                .put(`${process.env.VUE_APP_BACKENDURL}/idea/leaveProjectLeadership`,
                 {id: this.cardID})
                 .then(response => {
                     this.$parent.getFunction()
@@ -207,7 +207,7 @@
             deactivateIdea(){
                 event.preventDefault();
                 axios
-                .put('http://localhost:1234/idea/deactivateIdea',
+                .put(`${process.env.VUE_APP_BACKENDURL}/idea/deactivateIdea`,
                 {id: this.cardID, reason: this.deactivationReason})
                 .then(response => {
                     this.deactivationReason = null;
