@@ -71,7 +71,7 @@
                     const getFunc = this.getFunction();
                     getFunc();
                 })
-                .catch(error => console.log(error));
+                .catch(error => alert(error));
 
                 //{"title": "This is Isparta", "body": "This is Body", "creator": {"name": "Yigit Polat", "id":"123"}, "leader": {"name": "Guray Baydor", "id": "321"}, "members": [{"name": "Emre Kutlu", "id": "1"}, {"name": "Esat Kibrit", "id": "2"}], "date": "11/02/1995" }
                 //{"details": {"justification": "","costs": [{name:"ps4 kolu",cost: 150},{name:"KABLO",cost: 200}],"influenceArea": "","timeline": [],"boxlink": "","Status": -1},"votes": [],"title": this.title, "body": this.description, "creator": {"name": "Yigit Polat", "id":"111111"}, "leader": {}, "members": [{"name": "Emre Kutlu", "id": "1", "timestamp" : new Date()}, {"name": "Esat Kibrit", "id": "2","timestamp" : new Date()}], "date": new Date(), "isActive": true })

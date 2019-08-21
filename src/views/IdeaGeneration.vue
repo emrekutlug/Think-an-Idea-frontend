@@ -81,9 +81,8 @@
                 .get(`${process.env.VUE_APP_BACKENDURL}/idea/allIdeas`)
                 .then(response => {
                     this.allCards = response.data;
-                    console.log(response.data);
                 }).catch(error =>{
-                    console.log(error)
+                    alert(error)
                 })
             },
             getCreatorIdeas: function() {
@@ -93,7 +92,7 @@
                 .then(response => {
                     this.myIdeasCards = response.data
                 }).catch(error =>{
-                    console.log(error)
+                    alert(error)
                 })
             },
             getParticipatingIdeas: function() {
@@ -103,7 +102,7 @@
                 .then(response => {
                     this.iMemberCards = response.data
                 }).catch(error =>{
-                    console.log(error)
+                    alert(error)
                 })
             },
             getLeadingIdeas: function() {
@@ -113,7 +112,7 @@
                 .then(response => {
                     this.iLeadCards = response.data
                 }).catch(error =>{
-                    console.log(error)
+                    alert(error)
                 })
             },
             setIndex: function(index){
@@ -140,7 +139,6 @@
                     headers: {'Access-Control-Allow-Origin': '*'},
                     withCredentials : true
                 });
-                // Don't forget to return something
                 return result.data
             },
             isAdmin: async function(userID){
@@ -161,7 +159,6 @@
             let isAdmin = isAdminResult.result[0].isAdmin;
 
             this.userDetails = {"userID": userID, "userName": userName, "isAdmin": isAdmin};
-            console.log("User Details: ",this.userDetails);
         },
         components: {
             loading,

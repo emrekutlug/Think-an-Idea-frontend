@@ -3,7 +3,6 @@
         <VueCountdown :time="time" :end-time="0" @end="goVoting">
             <h1 slot-scope="props" style="color: darkorange">Time Remaining：{{ props.days }} days, {{ props.hours }} hours, {{ props.minutes }} minutes, {{ props.seconds }} seconds.</h1>
         </VueCountdown>
-        <button @click="goVoting">Go Voting</button>
     </div>
 </template>
 
@@ -27,14 +26,11 @@
             });
             this.time = result.data.deadline;
         },
-
         methods: {
             goVoting: function () {
                 if(this.time != null) {
                     this.$router.push({ path: '/voting' })
                 }
-
-
             }
         }
 

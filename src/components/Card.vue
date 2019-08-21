@@ -74,12 +74,6 @@
             editBodyFunc(e) {
                 this.editedBody = e.target.value;
             },
-            /*
-            save method
-                edit toggle
-                put method
-                idea generationdan get all function ı ekleme
-             */
             saveIdea(e){
                 e.preventDefault();
                 this.editIdea = !this.editIdea;
@@ -90,31 +84,18 @@
                     .put(`${process.env.VUE_APP_BACKENDURL}/idea/updateIdea`,
                         {id: this.cardID,title: this.editedTitle,body: this.editedBody, isActive: true})
                     .then(response => {
-                        console.log("Response from editAll updateEdit: ",response);
                         this.getFunction()
                     })
                     .catch(error => {
-                        console.log(error);
-                        alert("Could not update idea! Error is " + error);
+                        alert(error);
                         this.vueTitle = this.title;
                         this.vueBody = this.body;
                     })
 
             },
             async edit(e){
-                //this.inEdit=!this.inEdit;
                 e.preventDefault();
                 this.editIdea = !this.editIdea;
-
-               /* await axios
-                    .put('http://localhost:1234/idea/updateEdit',
-                        {id: this.cardID,title: this.title, edit: !this.title.edit })
-                    .then(response => {
-                        console.log("Response from editAll updateEdit: ",response);
-                        this.title.edit = !this.title.edit;
-                    }).catch(error =>{
-                    console.log(error)
-                })*/
             },
             checkIfMember() {
                 for (let i = 0; i < this.members.length; i++) {
@@ -127,7 +108,6 @@
                 return (this.creator.creatorID === this.userID) ? 'You' : this.creator.creatorName;
             },
             checkIfLeader() {
-                //console.log("checkIfLeader");
                 if (this.leader !== null){
                     return this.leader.leaderID === this.userID;
                 }
@@ -157,7 +137,7 @@
                 .then(response => {
                     this.$parent.getFunction()
                 }).catch(error =>{
-                    console.log(error)
+                    alert(error)
                 })
             },
             becomeProjectMember(){
@@ -168,7 +148,7 @@
                 .then(response => {
                     this.$parent.getFunction()
                 }).catch(error =>{
-                    console.log(error)
+                    alert(error)
                 })
             },
             leaveProjectMembership(){
@@ -179,7 +159,7 @@
                 .then(response => {
                     this.$parent.getFunction()
                 }).catch(error =>{
-                    console.log(error)
+                    alert(error)
                 })
             },
             becomeProjectLeader(){
@@ -190,7 +170,7 @@
                 .then(response => {
                     this.$parent.getFunction()
                 }).catch(error =>{
-                    console.log(error)
+                    alert(error)
                 })
             },
             leaveProjectLeadership(){
@@ -201,7 +181,7 @@
                 .then(response => {
                     this.$parent.getFunction()
                 }).catch(error =>{
-                    console.log(error)
+                    alert(error)
                 })
             },
             deactivateIdea(){
@@ -213,7 +193,7 @@
                     this.deactivationReason = null;
                     this.$parent.getFunction()
                 }).catch(error =>{
-                    console.log(error)
+                    alert(error)
                 })
             }
         },
